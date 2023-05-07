@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:multiple_platform_sexy_demo/hotel_booking/hotel_app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -40,12 +38,11 @@ class _CalendarPopupViewState extends State<CalendarPopupView>
   void initState() {
     animationController = AnimationController(
         duration: const Duration(milliseconds: 400), vsync: this);
-    if (widget.initialStartDate != null) {
-      startDate = widget.initialStartDate;
-    }
-    if (widget.initialEndDate != null) {
-      endDate = widget.initialEndDate;
-    }
+
+    startDate = widget.initialStartDate;
+
+    endDate = widget.initialEndDate;
+
     animationController.forward();
     super.initState();
   }
@@ -88,7 +85,7 @@ class _CalendarPopupViewState extends State<CalendarPopupView>
                         boxShadow: <BoxShadow>[
                           BoxShadow(
                               color: Colors.grey.withOpacity(0.2),
-                              offset: const Offset(4, 4),
+                              offset: Offset(4, 4),
                               blurRadius: 8.0),
                         ],
                       ),
@@ -122,11 +119,9 @@ class _CalendarPopupViewState extends State<CalendarPopupView>
                                         height: 4,
                                       ),
                                       Text(
-                                        startDate != null
-                                            ? DateFormat('EEE, dd MMM')
-                                                .format(startDate)
-                                            : '--/-- ',
-                                        style: TextStyle(
+                                        DateFormat('EEE, dd MMM')
+                                            .format(startDate),
+                                        style: const TextStyle(
                                           fontWeight: FontWeight.bold,
                                           fontSize: 16,
                                         ),
@@ -162,7 +157,7 @@ class _CalendarPopupViewState extends State<CalendarPopupView>
                                             ? DateFormat('EEE, dd MMM')
                                                 .format(endDate)
                                             : '--/-- ',
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 16),
                                       ),
@@ -201,7 +196,7 @@ class _CalendarPopupViewState extends State<CalendarPopupView>
                                     BoxShadow(
                                       color: Colors.grey.withOpacity(0.6),
                                       blurRadius: 8,
-                                      offset: const Offset(4, 4),
+                                      offset: Offset(4, 4),
                                     ),
                                   ],
                                 ),
@@ -220,7 +215,7 @@ class _CalendarPopupViewState extends State<CalendarPopupView>
                                         Navigator.pop(context);
                                       } catch (_) {}
                                     },
-                                    child: Center(
+                                    child: const Center(
                                       child: Text(
                                         'Apply',
                                         style: TextStyle(

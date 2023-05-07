@@ -167,11 +167,11 @@ class CustomRangeThumbShape extends RangeSliderThumbShape {
           ..maskFilter =
               MaskFilter.blur(BlurStyle.normal, convertRadiusToSigma(8)));
 
-    final Paint cPaint = Paint();
-    cPaint..color = Colors.white;
-    cPaint..strokeWidth = 14 / 2;
+    final Paint cPaint = Paint()
+      ..color = Colors.white
+      ..strokeWidth = 14 / 2
+      ..color = colorTween.evaluate(enableAnimation)!;
     canvas.drawCircle(Offset(center.dx, center.dy), 12, cPaint);
-    cPaint..color = colorTween.evaluate(enableAnimation)!;
     canvas.drawCircle(Offset(center.dx, center.dy), 10, cPaint);
     canvas.drawPath(thumbPath, Paint()..color = Colors.white);
   }

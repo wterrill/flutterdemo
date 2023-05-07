@@ -32,12 +32,8 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
   @override
   void initState() {
     setListOfDate(currentMonthDate);
-    if (widget.initialStartDate != null) {
-      startDate = widget.initialStartDate;
-    }
-    if (widget.initialEndDate != null) {
-      endDate = widget.initialEndDate;
-    }
+    startDate = widget.initialStartDate;
+    endDate = widget.initialEndDate;
     super.initState();
   }
 
@@ -98,7 +94,7 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
                             setListOfDate(currentMonthDate);
                           });
                         },
-                        child: Icon(
+                        child: const Icon(
                           Icons.keyboard_arrow_left,
                           color: Colors.grey,
                         ),
@@ -110,7 +106,7 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
                   child: Center(
                     child: Text(
                       DateFormat('MMMM, yyyy').format(currentMonthDate),
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 20,
                           color: Colors.black),
@@ -141,7 +137,7 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
                             setListOfDate(currentMonthDate);
                           });
                         },
-                        child: Icon(
+                        child: const Icon(
                           Icons.keyboard_arrow_right,
                           color: Colors.grey,
                         ),
@@ -215,7 +211,7 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
                               right: isEndDateRadius(date) ? 4 : 0),
                           child: Container(
                             decoration: BoxDecoration(
-                              color: startDate != null && endDate != null
+                              color: startDate != null
                                   ? getIsItStartAndEndDate(date) ||
                                           getIsInRange(date)
                                       ? HotelAppTheme.buildLightTheme()
@@ -249,8 +245,7 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
                             const BorderRadius.all(Radius.circular(32.0)),
                         onTap: () {
                           if (currentMonthDate.month == date.month) {
-                            if (widget.minimumDate != null &&
-                                widget.maximumDate != null) {
+                            if (widget.maximumDate != null) {
                               final DateTime newminimumDate = DateTime(
                                   widget.minimumDate.year,
                                   widget.minimumDate.month,
@@ -304,7 +299,7 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
                                       BoxShadow(
                                           color: Colors.grey.withOpacity(0.6),
                                           blurRadius: 4,
-                                          offset: const Offset(0, 0)),
+                                          offset: Offset(0, 0)),
                                     ]
                                   : null,
                             ),
@@ -368,7 +363,7 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
   }
 
   bool getIsInRange(DateTime date) {
-    if (startDate != null && endDate != null) {
+    if (endDate != null) {
       if (date.isAfter(startDate) && date.isBefore(endDate)) {
         return true;
       } else {
@@ -380,13 +375,11 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
   }
 
   bool getIsItStartAndEndDate(DateTime date) {
-    if (startDate != null &&
-        startDate.day == date.day &&
+    if (startDate.day == date.day &&
         startDate.month == date.month &&
         startDate.year == date.year) {
       return true;
-    } else if (endDate != null &&
-        endDate.day == date.day &&
+    } else if (endDate.day == date.day &&
         endDate.month == date.month &&
         endDate.year == date.year) {
       return true;
@@ -396,9 +389,7 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
   }
 
   bool isStartDateRadius(DateTime date) {
-    if (startDate != null &&
-        startDate.day == date.day &&
-        startDate.month == date.month) {
+    if (startDate.day == date.day && startDate.month == date.month) {
       return true;
     } else if (date.weekday == 1) {
       return true;
@@ -408,9 +399,7 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
   }
 
   bool isEndDateRadius(DateTime date) {
-    if (endDate != null &&
-        endDate.day == date.day &&
-        endDate.month == date.month) {
+    if (endDate.day == date.day && endDate.month == date.month) {
       return true;
     } else if (date.weekday == 7) {
       return true;
@@ -429,22 +418,20 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
     } else if (endDate.day == date.day && endDate.month == date.month) {
       endDate = DateTime.now();
     }
-    if (startDate == null && endDate != null) {
+    if (startDate == null) {
       startDate = endDate;
       endDate = DateTime.now();
     }
-    if (startDate != null && endDate != null) {
-      if (!endDate.isAfter(startDate)) {
-        final DateTime d = startDate;
-        startDate = endDate;
-        endDate = d;
-      }
-      if (date.isBefore(startDate)) {
-        startDate = date;
-      }
-      if (date.isAfter(endDate)) {
-        endDate = date;
-      }
+    if (!endDate.isAfter(startDate)) {
+      final DateTime d = startDate;
+      startDate = endDate;
+      endDate = d;
+    }
+    if (date.isBefore(startDate)) {
+      startDate = date;
+    }
+    if (date.isAfter(endDate)) {
+      endDate = date;
     }
     setState(() {
       try {

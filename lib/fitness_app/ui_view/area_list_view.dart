@@ -126,7 +126,7 @@ class AreaView extends StatelessWidget {
                 boxShadow: <BoxShadow>[
                   BoxShadow(
                       color: FitnessAppTheme.grey.withOpacity(0.4),
-                      offset: const Offset(1.1, 1.1),
+                      offset: Offset(1.1, 1.1),
                       blurRadius: 10.0),
                 ],
               ),

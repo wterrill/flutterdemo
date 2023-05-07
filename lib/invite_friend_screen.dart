@@ -2,6 +2,7 @@ import 'package:multiple_platform_sexy_demo/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class InviteFriend extends StatefulWidget {
+  const InviteFriend({Key? key}) : super(key: key);
   @override
   _InviteFriendState createState() => _InviteFriendState();
 }
@@ -31,7 +32,7 @@ class _InviteFriendState extends State<InviteFriend> {
               ),
               Container(
                 padding: const EdgeInsets.only(top: 8),
-                child: Text(
+                child: const Text(
                   'Invite Your Friends',
                   style: TextStyle(
                     fontSize: 20,
@@ -63,7 +64,7 @@ class _InviteFriendState extends State<InviteFriend> {
                         boxShadow: <BoxShadow>[
                           BoxShadow(
                               color: Colors.grey.withOpacity(0.6),
-                              offset: const Offset(4, 4),
+                              offset: Offset(4, 4),
                               blurRadius: 8.0),
                         ],
                       ),
@@ -78,14 +79,14 @@ class _InviteFriendState extends State<InviteFriend> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
-                              children: <Widget>[
+                              children: const <Widget>[
                                 Icon(
                                   Icons.share,
                                   color: Colors.white,
                                   size: 22,
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.all(4.0),
+                                  padding: EdgeInsets.all(4.0),
                                   child: Text(
                                     'Share',
                                     style: TextStyle(

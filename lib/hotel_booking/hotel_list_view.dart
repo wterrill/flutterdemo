@@ -43,7 +43,7 @@ class HotelListView extends StatelessWidget {
                     boxShadow: <BoxShadow>[
                       BoxShadow(
                         color: Colors.grey.withOpacity(0.6),
-                        offset: const Offset(4, 4),
+                        offset: Offset(4, 4),
                         blurRadius: 16,
                       ),
                     ],
@@ -82,7 +82,7 @@ class HotelListView extends StatelessWidget {
                                             Text(
                                               hotelData.titleTxt,
                                               textAlign: TextAlign.left,
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                 fontWeight: FontWeight.w600,
                                                 fontSize: 22,
                                               ),
@@ -167,7 +167,7 @@ class HotelListView extends StatelessWidget {
                                         Text(
                                           '\$${hotelData.perNight}',
                                           textAlign: TextAlign.left,
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                             fontWeight: FontWeight.w600,
                                             fontSize: 22,
                                           ),

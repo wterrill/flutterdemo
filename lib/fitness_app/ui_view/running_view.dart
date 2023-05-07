@@ -16,8 +16,8 @@ class RunningView extends StatelessWidget {
       builder: (BuildContext context, Widget? child) {
         return FadeTransition(
           opacity: animation,
-          child: new Transform(
-            transform: new Matrix4.translationValues(
+          child: Transform(
+            transform: Matrix4.translationValues(
                 0.0, 30 * (1.0 - animation.value), 0.0),
             child: Column(
               children: <Widget>[
@@ -25,14 +25,13 @@ class RunningView extends StatelessWidget {
                   padding: const EdgeInsets.only(
                       left: 24, right: 24, top: 0, bottom: 0),
                   child: Stack(
-                    overflow: Overflow.visible,
                     children: <Widget>[
                       Padding(
                         padding: const EdgeInsets.only(top: 16, bottom: 16),
                         child: Container(
                           decoration: BoxDecoration(
                             color: FitnessAppTheme.white,
-                            borderRadius: BorderRadius.only(
+                            borderRadius: const BorderRadius.only(
                                 topLeft: Radius.circular(8.0),
                                 bottomLeft: Radius.circular(8.0),
                                 bottomRight: Radius.circular(8.0),
@@ -48,8 +47,8 @@ class RunningView extends StatelessWidget {
                             alignment: Alignment.topLeft,
                             children: <Widget>[
                               ClipRRect(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(8.0)),
+                                borderRadius: const BorderRadius.all(
+                                    Radius.circular(8.0)),
                                 child: SizedBox(
                                   height: 74,
                                   child: AspectRatio(
@@ -63,9 +62,9 @@ class RunningView extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
                                   Row(
-                                    children: <Widget>[
+                                    children: const <Widget>[
                                       Padding(
-                                        padding: const EdgeInsets.only(
+                                        padding: EdgeInsets.only(
                                           left: 100,
                                           right: 16,
                                           top: 16,

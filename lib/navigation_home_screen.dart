@@ -8,6 +8,7 @@ import 'package:multiple_platform_sexy_demo/invite_friend_screen.dart';
 import 'package:flutter/material.dart';
 
 class NavigationHomeScreen extends StatefulWidget {
+  const NavigationHomeScreen({Key? key}) : super(key: key);
   @override
   _NavigationHomeScreenState createState() => _NavigationHomeScreenState();
 }
@@ -56,15 +57,15 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
         });
       } else if (drawerIndex == DrawerIndex.Help) {
         setState(() {
-          screenView = HelpScreen();
+          screenView = const HelpScreen();
         });
       } else if (drawerIndex == DrawerIndex.FeedBack) {
         setState(() {
-          screenView = FeedbackScreen();
+          screenView = const FeedbackScreen();
         });
       } else if (drawerIndex == DrawerIndex.Invite) {
         setState(() {
-          screenView = InviteFriend();
+          screenView = const InviteFriend();
         });
       } else {
         //do in your way......

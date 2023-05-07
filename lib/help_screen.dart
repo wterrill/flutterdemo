@@ -2,6 +2,7 @@ import 'package:multiple_platform_sexy_demo/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class HelpScreen extends StatefulWidget {
+  const HelpScreen({Key? key}) : super(key: key);
   @override
   _HelpScreenState createState() => _HelpScreenState();
 }
@@ -31,7 +32,7 @@ class _HelpScreenState extends State<HelpScreen> {
               ),
               Container(
                 padding: const EdgeInsets.only(top: 8),
-                child: Text(
+                child: const Text(
                   'How can we help you?',
                   style: TextStyle(
                     fontSize: 20,
@@ -63,7 +64,7 @@ class _HelpScreenState extends State<HelpScreen> {
                         boxShadow: <BoxShadow>[
                           BoxShadow(
                               color: Colors.grey.withOpacity(0.6),
-                              offset: const Offset(4, 4),
+                              offset: Offset(4, 4),
                               blurRadius: 8.0),
                         ],
                       ),
@@ -71,9 +72,9 @@ class _HelpScreenState extends State<HelpScreen> {
                         color: Colors.transparent,
                         child: InkWell(
                           onTap: () {},
-                          child: Center(
+                          child: const Center(
                             child: Padding(
-                              padding: const EdgeInsets.all(4.0),
+                              padding: EdgeInsets.all(4.0),
                               child: Text(
                                 'Chat with Us',
                                 style: TextStyle(

@@ -121,7 +121,7 @@ class MealsView extends StatelessWidget {
                           BoxShadow(
                               color: HexColor(mealsListData.endColor)
                                   .withOpacity(0.6),
-                              offset: const Offset(1.1, 4.0),
+                              offset: Offset(1.1, 4.0),
                               blurRadius: 8.0),
                         ],
                         gradient: LinearGradient(
@@ -149,7 +149,7 @@ class MealsView extends StatelessWidget {
                             Text(
                               mealsListData.titleTxt,
                               textAlign: TextAlign.center,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontFamily: FitnessAppTheme.fontName,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 16,
@@ -167,7 +167,7 @@ class MealsView extends StatelessWidget {
                                   children: <Widget>[
                                     Text(
                                       mealsListData.meals!.join('\n'),
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         fontFamily: FitnessAppTheme.fontName,
                                         fontWeight: FontWeight.w500,
                                         fontSize: 10,
@@ -187,7 +187,7 @@ class MealsView extends StatelessWidget {
                                       Text(
                                         mealsListData.kacl.toString(),
                                         textAlign: TextAlign.center,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           fontFamily: FitnessAppTheme.fontName,
                                           fontWeight: FontWeight.w500,
                                           fontSize: 24,
@@ -195,9 +195,9 @@ class MealsView extends StatelessWidget {
                                           color: FitnessAppTheme.white,
                                         ),
                                       ),
-                                      Padding(
-                                        padding: const EdgeInsets.only(
-                                            left: 4, bottom: 3),
+                                      const Padding(
+                                        padding:
+                                            EdgeInsets.only(left: 4, bottom: 3),
                                         child: Text(
                                           'kcal',
                                           style: TextStyle(

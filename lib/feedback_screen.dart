@@ -1,8 +1,8 @@
 import 'package:multiple_platform_sexy_demo/app_theme.dart';
-import 'package:multiple_platform_sexy_demo/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class FeedbackScreen extends StatefulWidget {
+  const FeedbackScreen({Key? key}) : super(key: key);
   @override
   _FeedbackScreenState createState() => _FeedbackScreenState();
 }
@@ -35,7 +35,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                   ),
                   Container(
                     padding: const EdgeInsets.only(top: 8),
-                    child: Text(
+                    child: const Text(
                       'Your FeedBack',
                       style: TextStyle(
                         fontSize: 20,
@@ -67,7 +67,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                           boxShadow: <BoxShadow>[
                             BoxShadow(
                                 color: Colors.grey.withOpacity(0.6),
-                                offset: const Offset(4, 4),
+                                offset: Offset(4, 4),
                                 blurRadius: 8.0),
                           ],
                         ),
@@ -77,9 +77,9 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                             onTap: () {
                               FocusScope.of(context).requestFocus(FocusNode());
                             },
-                            child: Center(
+                            child: const Center(
                               child: Padding(
-                                padding: const EdgeInsets.all(4.0),
+                                padding: EdgeInsets.all(4.0),
                                 child: Text(
                                   'Send',
                                   style: TextStyle(
@@ -113,7 +113,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
           boxShadow: <BoxShadow>[
             BoxShadow(
                 color: Colors.grey.withOpacity(0.8),
-                offset: const Offset(4, 4),
+                offset: Offset(4, 4),
                 blurRadius: 8),
           ],
         ),
@@ -129,13 +129,13 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
               child: TextField(
                 maxLines: null,
                 onChanged: (String txt) {},
-                style: TextStyle(
+                style: const TextStyle(
                   fontFamily: AppTheme.fontName,
                   fontSize: 16,
-                  color: AppTheme.dark_grey,
+                  color: AppTheme.darkGrey,
                 ),
                 cursorColor: Colors.blue,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     border: InputBorder.none,
                     hintText: 'Enter your feedback...'),
               ),

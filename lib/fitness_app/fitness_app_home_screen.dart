@@ -6,6 +6,7 @@ import 'fintness_app_theme.dart';
 import 'my_diary/my_diary_screen.dart';
 
 class FitnessAppHomeScreen extends StatefulWidget {
+  const FitnessAppHomeScreen({Key? key}) : super(key: key);
   @override
   _FitnessAppHomeScreenState createState() => _FitnessAppHomeScreenState();
 }
@@ -72,8 +73,8 @@ class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen>
   Widget bottomBar() {
     return Column(
       children: <Widget>[
-        const Expanded(
-          child: SizedBox(),
+        Expanded(
+          child: const SizedBox(),
         ),
         BottomBarView(
           tabIconsList: tabIconsList,

@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:multiple_platform_sexy_demo/hotel_booking/calendar_popup_view.dart';
 import 'package:multiple_platform_sexy_demo/hotel_booking/hotel_list_view.dart';
 import 'package:multiple_platform_sexy_demo/hotel_booking/model/hotel_list_data.dart';
@@ -9,6 +8,8 @@ import 'filters_screen.dart';
 import 'hotel_app_theme.dart';
 
 class HotelHomeScreen extends StatefulWidget {
+  const HotelHomeScreen({Key? key}) : super(key: key);
+
   @override
   _HotelHomeScreenState createState() => _HotelHomeScreenState();
 }
@@ -131,7 +132,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
         boxShadow: <BoxShadow>[
           BoxShadow(
               color: Colors.grey.withOpacity(0.2),
-              offset: const Offset(0, -2),
+              offset: Offset(0, -2),
               blurRadius: 8.0),
         ],
       ),
@@ -246,7 +247,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                           ),
                           Text(
                             '${DateFormat("dd, MMM").format(startDate)} - ${DateFormat("dd, MMM").format(endDate)}',
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontWeight: FontWeight.w100,
                               fontSize: 16,
                             ),
@@ -300,7 +301,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                           const SizedBox(
                             height: 8,
                           ),
-                          Text(
+                          const Text(
                             '1 Room - 2 Adults',
                             style: TextStyle(
                               fontWeight: FontWeight.w100,
@@ -337,7 +338,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                   boxShadow: <BoxShadow>[
                     BoxShadow(
                         color: Colors.grey.withOpacity(0.2),
-                        offset: const Offset(0, 2),
+                        offset: Offset(0, 2),
                         blurRadius: 8.0),
                   ],
                 ),
@@ -350,7 +351,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                       fontSize: 18,
                     ),
                     cursorColor: HotelAppTheme.buildLightTheme().primaryColor,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       border: InputBorder.none,
                       hintText: 'London...',
                     ),
@@ -368,7 +369,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
               boxShadow: <BoxShadow>[
                 BoxShadow(
                     color: Colors.grey.withOpacity(0.4),
-                    offset: const Offset(0, 2),
+                    offset: Offset(0, 2),
                     blurRadius: 8.0),
               ],
             ),
@@ -409,7 +410,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
               boxShadow: <BoxShadow>[
                 BoxShadow(
                     color: Colors.grey.withOpacity(0.2),
-                    offset: const Offset(0, -2),
+                    offset: Offset(0, -2),
                     blurRadius: 8.0),
               ],
             ),
@@ -423,8 +424,8 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
             child: Row(
               children: <Widget>[
                 Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                  child: const Padding(
+                    padding: EdgeInsets.all(8.0),
                     child: Text(
                       '530 hotels found',
                       style: TextStyle(
@@ -449,7 +450,8 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                       Navigator.push<dynamic>(
                         context,
                         MaterialPageRoute<dynamic>(
-                            builder: (BuildContext context) => FiltersScreen(),
+                            builder: (BuildContext context) =>
+                                const FiltersScreen(),
                             fullscreenDialog: true),
                       );
                     },
@@ -457,7 +459,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                       padding: const EdgeInsets.only(left: 8),
                       child: Row(
                         children: <Widget>[
-                          Text(
+                          const Text(
                             'Filter',
                             style: TextStyle(
                               fontWeight: FontWeight.w100,
@@ -479,11 +481,11 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
             ),
           ),
         ),
-        const Positioned(
+        Positioned(
           top: 0,
           left: 0,
           right: 0,
-          child: Divider(
+          child: const Divider(
             height: 1,
           ),
         )
@@ -520,7 +522,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
         boxShadow: <BoxShadow>[
           BoxShadow(
               color: Colors.grey.withOpacity(0.2),
-              offset: const Offset(0, 2),
+              offset: Offset(0, 2),
               blurRadius: 8.0),
         ],
       ),
@@ -542,15 +544,15 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                   onTap: () {
                     Navigator.pop(context);
                   },
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                  child: const Padding(
+                    padding: EdgeInsets.all(8.0),
                     child: Icon(Icons.arrow_back),
                   ),
                 ),
               ),
             ),
             Expanded(
-              child: Center(
+              child: const Center(
                 child: Text(
                   'Explore',
                   style: TextStyle(
@@ -574,8 +576,8 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                         Radius.circular(32.0),
                       ),
                       onTap: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                      child: const Padding(
+                        padding: EdgeInsets.all(8.0),
                         child: Icon(Icons.favorite_border),
                       ),
                     ),
@@ -587,8 +589,8 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                         Radius.circular(32.0),
                       ),
                       onTap: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                      child: const Padding(
+                        padding: EdgeInsets.all(8.0),
                         child: Icon(FontAwesomeIcons.mapMarkerAlt),
                       ),
                     ),

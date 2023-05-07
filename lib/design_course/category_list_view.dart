@@ -29,7 +29,7 @@ class _CategoryListViewState extends State<CategoryListView>
 
   @override
   void dispose() {
-    animationController?.dispose();
+    animationController.dispose();
     super.dispose();
   }
 
@@ -37,7 +37,7 @@ class _CategoryListViewState extends State<CategoryListView>
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 16, bottom: 16),
-      child: Container(
+      child: SizedBox(
         height: 134,
         width: double.infinity,
         child: FutureBuilder<bool>(
@@ -142,7 +142,7 @@ class CategoryView extends StatelessWidget {
                                             child: Text(
                                               category.title,
                                               textAlign: TextAlign.left,
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                 fontWeight: FontWeight.w600,
                                                 fontSize: 16,
                                                 letterSpacing: 0.27,
@@ -151,8 +151,8 @@ class CategoryView extends StatelessWidget {
                                               ),
                                             ),
                                           ),
-                                          const Expanded(
-                                            child: SizedBox(),
+                                          Expanded(
+                                            child: const SizedBox(),
                                           ),
                                           Padding(
                                             padding: const EdgeInsets.only(
@@ -167,7 +167,7 @@ class CategoryView extends StatelessWidget {
                                                 Text(
                                                   '${category.lessonCount} lesson',
                                                   textAlign: TextAlign.left,
-                                                  style: TextStyle(
+                                                  style: const TextStyle(
                                                     fontWeight: FontWeight.w200,
                                                     fontSize: 12,
                                                     letterSpacing: 0.27,
@@ -182,7 +182,7 @@ class CategoryView extends StatelessWidget {
                                                         '${category.rating}',
                                                         textAlign:
                                                             TextAlign.left,
-                                                        style: TextStyle(
+                                                        style: const TextStyle(
                                                           fontWeight:
                                                               FontWeight.w200,
                                                           fontSize: 18,
@@ -192,7 +192,7 @@ class CategoryView extends StatelessWidget {
                                                                   .grey,
                                                         ),
                                                       ),
-                                                      Icon(
+                                                      const Icon(
                                                         Icons.star,
                                                         color:
                                                             DesignCourseAppTheme
@@ -218,7 +218,7 @@ class CategoryView extends StatelessWidget {
                                                 Text(
                                                   '\$${category.money}',
                                                   textAlign: TextAlign.left,
-                                                  style: TextStyle(
+                                                  style: const TextStyle(
                                                     fontWeight: FontWeight.w600,
                                                     fontSize: 18,
                                                     letterSpacing: 0.27,
@@ -227,18 +227,18 @@ class CategoryView extends StatelessWidget {
                                                   ),
                                                 ),
                                                 Container(
-                                                  decoration: BoxDecoration(
+                                                  decoration:
+                                                      const BoxDecoration(
                                                     color: DesignCourseAppTheme
                                                         .nearlyBlue,
                                                     borderRadius:
-                                                        const BorderRadius.all(
+                                                        BorderRadius.all(
                                                             Radius.circular(
                                                                 8.0)),
                                                   ),
-                                                  child: Padding(
+                                                  child: const Padding(
                                                     padding:
-                                                        const EdgeInsets.all(
-                                                            4.0),
+                                                        EdgeInsets.all(4.0),
                                                     child: Icon(
                                                       Icons.add,
                                                       color:

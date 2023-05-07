@@ -6,6 +6,8 @@ import 'hotel_app_theme.dart';
 import 'model/popular_filter_list.dart';
 
 class FiltersScreen extends StatefulWidget {
+  const FiltersScreen({Key? key}) : super(key: key);
+
   @override
   _FiltersScreenState createState() => _FiltersScreenState();
 }
@@ -64,7 +66,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                     BoxShadow(
                       color: Colors.grey.withOpacity(0.6),
                       blurRadius: 8,
-                      offset: const Offset(4, 4),
+                      offset: Offset(4, 4),
                     ),
                   ],
                 ),
@@ -76,7 +78,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                     onTap: () {
                       Navigator.pop(context);
                     },
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         'Apply',
                         style: TextStyle(
@@ -146,7 +148,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                   Expanded(
                     child: Text(
                       date.titleTxt,
-                      style: TextStyle(color: Colors.black),
+                      style: const TextStyle(color: Colors.black),
                     ),
                   ),
                   CupertinoSwitch(
@@ -370,7 +372,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
         boxShadow: <BoxShadow>[
           BoxShadow(
               color: Colors.grey.withOpacity(0.2),
-              offset: const Offset(0, 2),
+              offset: Offset(0, 2),
               blurRadius: 4.0),
         ],
       ),
@@ -392,15 +394,15 @@ class _FiltersScreenState extends State<FiltersScreen> {
                   onTap: () {
                     Navigator.pop(context);
                   },
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                  child: const Padding(
+                    padding: EdgeInsets.all(8.0),
                     child: Icon(Icons.close),
                   ),
                 ),
               ),
             ),
             Expanded(
-              child: Center(
+              child: const Center(
                 child: Text(
                   'Filters',
                   style: TextStyle(
