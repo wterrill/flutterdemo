@@ -192,12 +192,12 @@ class _BottomBarViewState extends State<BottomBarView>
   void setRemoveAllSelection(TabIconData tabIconData) {
     if (!mounted) return;
     setState(() {
-      widget.tabIconsList.forEach((TabIconData tab) {
+      for (var tab in widget.tabIconsList) {
         tab.isSelected = false;
         if (tabIconData.index == tab.index) {
           tab.isSelected = true;
         }
-      });
+      }
     });
   }
 }

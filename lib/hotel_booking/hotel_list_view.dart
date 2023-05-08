@@ -63,7 +63,8 @@ class HotelListView extends StatelessWidget {
                             ),
                             Container(
                               color: HotelAppTheme.buildLightTheme()
-                                  .backgroundColor,
+                                  .colorScheme
+                                  .background,
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -103,7 +104,7 @@ class HotelListView extends StatelessWidget {
                                                 width: 4,
                                               ),
                                               Icon(
-                                                FontAwesomeIcons.mapMarkerAlt,
+                                                FontAwesomeIcons.locationDot,
                                                 size: 12,
                                                 color: HotelAppTheme
                                                         .buildLightTheme()

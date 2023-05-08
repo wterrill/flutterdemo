@@ -206,13 +206,11 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
                             right: isEndDateRadius(date) ? 4 : 0),
                         child: Container(
                           decoration: BoxDecoration(
-                            color: startDate != null
-                                ? getIsItStartAndEndDate(date) ||
-                                        getIsInRange(date)
-                                    ? HotelAppTheme.buildLightTheme()
-                                        .primaryColor
-                                        .withOpacity(0.4)
-                                    : Colors.transparent
+                            color: getIsItStartAndEndDate(date) ||
+                                    getIsInRange(date)
+                                ? HotelAppTheme.buildLightTheme()
+                                    .primaryColor
+                                    .withOpacity(0.4)
                                 : Colors.transparent,
                             borderRadius: BorderRadius.only(
                               bottomLeft: isStartDateRadius(date)
@@ -240,36 +238,16 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
                           const BorderRadius.all(Radius.circular(32.0)),
                       onTap: () {
                         if (currentMonthDate.month == date.month) {
-                          if (widget.maximumDate != null) {
-                            final DateTime newminimumDate = DateTime(
-                                widget.minimumDate.year,
-                                widget.minimumDate.month,
-                                widget.minimumDate.day - 1);
-                            final DateTime newmaximumDate = DateTime(
-                                widget.maximumDate.year,
-                                widget.maximumDate.month,
-                                widget.maximumDate.day + 1);
-                            if (date.isAfter(newminimumDate) &&
-                                date.isBefore(newmaximumDate)) {
-                              onDateClick(date);
-                            }
-                          } else if (widget.minimumDate != null) {
-                            final DateTime newminimumDate = DateTime(
-                                widget.minimumDate.year,
-                                widget.minimumDate.month,
-                                widget.minimumDate.day - 1);
-                            if (date.isAfter(newminimumDate)) {
-                              onDateClick(date);
-                            }
-                          } else if (widget.maximumDate != null) {
-                            final DateTime newmaximumDate = DateTime(
-                                widget.maximumDate.year,
-                                widget.maximumDate.month,
-                                widget.maximumDate.day + 1);
-                            if (date.isBefore(newmaximumDate)) {
-                              onDateClick(date);
-                            }
-                          } else {
+                          final DateTime newminimumDate = DateTime(
+                              widget.minimumDate.year,
+                              widget.minimumDate.month,
+                              widget.minimumDate.day - 1);
+                          final DateTime newmaximumDate = DateTime(
+                              widget.maximumDate.year,
+                              widget.maximumDate.month,
+                              widget.maximumDate.day + 1);
+                          if (date.isAfter(newminimumDate) &&
+                              date.isBefore(newmaximumDate)) {
                             onDateClick(date);
                           }
                         }
@@ -356,12 +334,8 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
   }
 
   bool getIsInRange(DateTime date) {
-    if (endDate != null) {
-      if (date.isAfter(startDate) && date.isBefore(endDate)) {
-        return true;
-      } else {
-        return false;
-      }
+    if (date.isAfter(startDate) && date.isBefore(endDate)) {
+      return true;
     } else {
       return false;
     }
@@ -402,19 +376,9 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
   }
 
   void onDateClick(DateTime date) {
-    if (startDate == null) {
-      startDate = date;
-    } else if (startDate != date && endDate == null) {
-      endDate = date;
-    } else if (startDate.day == date.day && startDate.month == date.month) {
-      startDate = DateTime.now();
-    } else if (endDate.day == date.day && endDate.month == date.month) {
-      endDate = DateTime.now();
-    }
-    if (startDate == null) {
-      startDate = endDate;
-      endDate = DateTime.now();
-    }
+    startDate = date;
+    startDate = endDate;
+    endDate = DateTime.now();
     if (!endDate.isAfter(startDate)) {
       final DateTime d = startDate;
       startDate = endDate;
