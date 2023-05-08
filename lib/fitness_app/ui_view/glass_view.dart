@@ -1,5 +1,3 @@
-// ignore_for_file: unnecessary_new
-
 import 'package:multiple_platform_sexy_demo/main.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +18,7 @@ class GlassView extends StatelessWidget {
         return FadeTransition(
           opacity: animation,
           child: Transform(
-            transform: new Matrix4.translationValues(
+            transform: Matrix4.translationValues(
                 0.0, 30 * (1.0 - animation.value), 0.0),
             child: Column(
               children: <Widget>[
@@ -39,12 +37,13 @@ class GlassView extends StatelessWidget {
                                 bottomLeft: Radius.circular(8.0),
                                 bottomRight: Radius.circular(8.0),
                                 topRight: Radius.circular(8.0)),
-                            // boxShadow: <BoxShadow>[
-                            //   BoxShadow(
-                            //       color: FitnessAppTheme.grey.withOpacity(0.2),
-                            //       offset: Offset(1.1, 1.1),
-                            //       blurRadius: 10.0),
-                            // ],
+                            boxShadow: <BoxShadow>[
+                              // WLT
+                              BoxShadow(
+                                  color: FitnessAppTheme.grey.withOpacity(0.2),
+                                  offset: Offset(1.1, 1.1),
+                                  blurRadius: 10.0),
+                            ],
                           ),
                           child: Column(
                             children: <Widget>[

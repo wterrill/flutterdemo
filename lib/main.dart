@@ -16,17 +16,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    //   statusBarColor: Colors.transparent,
-    //   statusBarIconBrightness: Brightness.dark,
-    //   statusBarBrightness: Brightness
-    //       .dark, //Platform.isAndroid ? Brightness.dark : Brightness.light,
-    //   systemNavigationBarColor: Colors.yellow,
-    //   systemNavigationBarDividerColor: Colors.grey,
-    //   systemNavigationBarIconBrightness: Brightness.dark,
-    // ));
+    // WLT remove this to get rid of overlay
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.dark,
+      statusBarBrightness: Brightness
+          .dark, //Platform.isAndroid ? Brightness.dark : Brightness.light,
+      systemNavigationBarColor: Colors.yellow,
+      systemNavigationBarDividerColor: Colors.grey,
+      systemNavigationBarIconBrightness: Brightness.dark,
+    ));
     return MaterialApp(
-        title: 'MXOTech Mobile Demo',
+        title: 'Will Terrill Mobile Demo',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.yellow,

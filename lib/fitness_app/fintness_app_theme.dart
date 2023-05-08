@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 class FitnessAppTheme {
   FitnessAppTheme._();
   static const Color nearlyWhite = Color(0xFFFAFAFA);
-  // static const Color white = Colors.blue; // totally different color!
-  // static const Color white = Colors.white70; // eggshell white
+  // WLT static const Color white = Colors.blue; // totally different color!
+  // WLT static const Color white = Colors.white70; // eggshell white
   static const Color white = Color(0xFFFFFFFF); // pure white
   static const Color background = Color(0xFFF2F3F8);
   static const Color nearlyDarkBlue = Color(0xFF2633C5);
@@ -86,7 +86,7 @@ class FitnessAppTheme {
     fontWeight: FontWeight.w400,
     fontSize: 12,
     letterSpacing: 0.2,
-    color: lightText, // was lightText
+    color: lightText,
   );
 }
 
@@ -100,7 +100,7 @@ class FitnessAppTheme2 {
   static const Color nearlyBlue = Color(0xFF00B6F0);
   static const Color nearlyBlack = Color(0xFF213333);
   static const Color grey = Color(0xFF3A5160);
-  static const Color dark_grey = Color(0xFF313A44);
+  static const Color darkGrey = Color(0xFF313A44);
 
   static const Color darkText = Color(0xFF253840);
   static const Color darkerText = Color(0xFF17262A);

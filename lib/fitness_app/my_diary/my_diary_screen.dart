@@ -82,7 +82,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
       ),
     );
 
-    // _______________________________________
+    // WLT  _______________________________________
 
     listViews.add(
       TitleView(
@@ -168,7 +168,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
       );
     }
 
-    // _______________________________________
+    // WLT _______________________________________
   }
 
   Future<bool> getData() async {

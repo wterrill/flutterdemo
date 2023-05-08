@@ -222,9 +222,9 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                     ),
                     onTap: () {
                       FocusScope.of(context).requestFocus(FocusNode());
-                      // setState(() {
-                      //   isDatePopupOpen = true;
-                      // });
+                      setState(() {
+                        // isDatePopupOpen = true;
+                      });
                       showDemoDialog(context: context);
                     },
                     child: Padding(

@@ -28,33 +28,33 @@ class _HomeDrawerState extends State<HomeDrawer> {
   void setDrawerListArray() {
     drawerList = <DrawerList>[
       DrawerList(
-        index: DrawerIndex.HOME,
+        index: DrawerIndex.home,
         labelName: 'Home',
         icon: const Icon(Icons.home),
       ),
       DrawerList(
-        index: DrawerIndex.Help,
+        index: DrawerIndex.help,
         labelName: 'Help',
         isAssetsImage: true,
         imageName: 'assets/images/supportIcon.png',
       ),
       DrawerList(
-        index: DrawerIndex.FeedBack,
+        index: DrawerIndex.feedBack,
         labelName: 'FeedBack',
         icon: const Icon(Icons.help),
       ),
       DrawerList(
-        index: DrawerIndex.Invite,
+        index: DrawerIndex.invite,
         labelName: 'Invite Friend',
         icon: const Icon(Icons.group),
       ),
       DrawerList(
-        index: DrawerIndex.Share,
+        index: DrawerIndex.share,
         labelName: 'Rate the app',
         icon: const Icon(Icons.share),
       ),
       DrawerList(
-        index: DrawerIndex.About,
+        index: DrawerIndex.about,
         labelName: 'About Us',
         icon: const Icon(Icons.info),
       ),
@@ -294,13 +294,13 @@ class _HomeDrawerState extends State<HomeDrawer> {
 }
 
 enum DrawerIndex {
-  HOME,
-  FeedBack,
-  Help,
-  Share,
-  About,
-  Invite,
-  Testing,
+  home,
+  feedBack,
+  help,
+  share,
+  about,
+  invite,
+  testing,
 }
 
 class DrawerList {
