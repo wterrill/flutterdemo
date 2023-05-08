@@ -412,7 +412,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                 ),
               ),
             ),
-            Container(
+            SizedBox(
               width: AppBar().preferredSize.height + 40,
               height: AppBar().preferredSize.height,
             )

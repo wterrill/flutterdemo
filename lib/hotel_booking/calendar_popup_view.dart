@@ -153,10 +153,8 @@ class _CalendarPopupViewState extends State<CalendarPopupView>
                                         height: 4,
                                       ),
                                       Text(
-                                        endDate != null
-                                            ? DateFormat('EEE, dd MMM')
-                                                .format(endDate)
-                                            : '--/-- ',
+                                        DateFormat('EEE, dd MMM')
+                                            .format(endDate),
                                         style: const TextStyle(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 16),

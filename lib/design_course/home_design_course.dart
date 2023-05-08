@@ -28,7 +28,7 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
             getAppBarUI(),
             Expanded(
               child: SingleChildScrollView(
-                child: Container(
+                child: SizedBox(
                   height: MediaQuery.of(context).size.height,
                   child: Column(
                     children: <Widget>[
@@ -195,7 +195,7 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Container(
+          SizedBox(
             width: MediaQuery.of(context).size.width * 0.75,
             height: 64,
             child: Padding(
@@ -293,7 +293,7 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
               ],
             ),
           ),
-          Container(
+          SizedBox(
             width: 60,
             height: 60,
             child: Image.asset('assets/design_course/userImage.png'),
